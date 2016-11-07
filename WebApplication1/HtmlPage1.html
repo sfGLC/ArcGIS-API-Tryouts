@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leaflet Map with a Basemap</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <!--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/esri-leaflet@2.0.4"></script>-->
+
+    <link rel="stylesheet" href="https://js.arcgis.com/3.18/esri/css/esri.css">
+    <script src="https://js.arcgis.com/3.18/"></script>
+
+    <style>
+
+        html, body, #mapid {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="mapid"></div>
+    <script>
+        //var mymap = L.map('mapid').setView([37.75, -122.23], 10);
+        //L.esri.basemapLayer("Streets").addTo(mymap);
+        //L.esri.dynamicMapLayer({ url: "http://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/radar_meteo_imagery_nexrad_time/MapServer" }).addTo(mymap);
+
+        var map;
+        require(["esri/map", "dojo/domReady!"], function (Map) {
+            map = new Map("mapid", {
+                basemap: "topo",
+                center: [-122.45, 37.75],
+                zoom: 13
+            });
+        });
+    </script>
+
+</body>
+</html>
